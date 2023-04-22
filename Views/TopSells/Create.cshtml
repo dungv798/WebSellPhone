@@ -1,0 +1,51 @@
+﻿@model WebForSell.Models.TopSell
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>TopSell</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="isTop" class="control-label"></label>
+                <input asp-for="isTop" class="form-control" />
+                <span asp-validation-for="isTop" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TopSellName" class="control-label"></label>
+                <input asp-for="TopSellName" class="form-control" />
+                <span asp-validation-for="TopSellName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="isTop" class="control-label"></label>
+                <input asp-for="isTop" class="form-control" />
+                <span asp-validation-for="isTop" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TopSellPrice" class="control-label"></label>
+                <input asp-for="TopSellPrice" class="form-control" />
+                <span asp-validation-for="TopSellPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TopSellImage" class="control-label"></label>
+                <input asp-for="TopSellImage" class="form-control" />
+                <span asp-validation-for="TopSellImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,143 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="MainContent" class="main-content content-for-layout" tabindex="-1">
+	<div class="main-content__inner">
+		<div id="shopify-section-template--15545693372468__breadcrumb" class="shopify-section">
+			<style>
+				:root {
+					--breadcrumb-bg: #ffffff;
+					--breadcrumb-color-link: #999999;
+					--breadcrumb-color: #ff9300;
+					--breadcrumb-heading-color: #222222;
+				}
+
+				.vela-breadcrumbs {
+					min-height: 60px;
+					margin: 0 auto 30px;
+				}
+
+				media screen and (max-width: 767px) {
+					.vela-breadcrumbs
+
+				{
+					min-height: 60px;
+				}
+
+				}
+			</style><div class="vela-breadcrumbs d-flex flex-wrap align-items-center vela-breadcrumbs--no-image">
+				<div class="container">
+					<div class="vela-breadcrumbs__inner align-items-start flex-column" aria-label="breadcrumb">
+						<h1 class="vela-breadcrumbs__title mb-2 d-none">Account</h1>
+						<ol class="breadcrumb m-0" itemscope itemtype="http://schema.org/BreadcrumbList">
+							<li class="breadcrumb-item breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+								<a class="breadcrumb__link" href="../index.html" title="Home" itemprop="item">
+									<span itemprop="name">Home</span>
+								</a>
+								<meta itemprop="position" content="1" />
+							</li>
+							<li class="breadcrumb-item breadcrumb__item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+								<span class="breadcrumb__text">
+									<span itemprop="name">Account</span>
+								</span>
+								<meta itemprop="position" content="2" />
+							</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+
+		</div><div id="shopify-section-template--15545693372468__main" class="shopify-section">
+			<link href="../../cdn.shopify.com/s/files/1/0012/5334/3284/t/12/assets/customerf9f0.css?v=86744312228644254241670405698" rel="stylesheet" type="text/css" media="all" />
+
+			<div class="customer login">
+				<div class="container">
+					<div class="customer__inner">
+						<div id="recover">
+							<h1 class="main-page-title page-title m-0" tabindex="-1">Reset your password</h1>
+							<div class="login__wrapper">
+								<p>
+									We will send you an email to reset your password
+								</p>
+								<form method="post" action="https://velanetro.myshopify.com/account/recover" accept-charset="UTF-8">
+									<input type="hidden" name="form_type" value="recover_customer_password" /><input type="hidden" name="utf8" value="✓" />
+									<div class="mb-4 mb-lg-5">
+										<label class="form-label" for="RecoverEmail">
+											Email
+										</label>
+										<input class="form-control" type="email"
+											   value=""
+											   name="email"
+											   id="RecoverEmail"
+											   autocorrect="off"
+											   autocapitalize="off"
+											   autocomplete="email"
+											   required
+											   placeholder="Email">
+
+									</div>
+									<div class="d-flex justify-content-between align-items-center">
+										<button class="btn rounded-pill btn-default">
+											<span>Submit</span>
+										</button>
+
+										<a href="#login">
+											<u>Cancel</u>
+										</a>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="login__form">
+							<div class="page-header page-account__header text-center">
+								<h1 id="login" class="main-page-title page-title m-0" tabindex="-1">Login</h1>
+							</div>
+							<div class="login__wrapper">
+								@using (Html.BeginForm("Login", "Account", FormMethod.Post)){
+									if (ViewBag.loginStatus != null && ViewBag.LoginStatus == 0)
+									{
+										<div style="background-color:#ff0000">
+											<p>Invalid username or password, please try it again</p>
+										</div>
+									}
+									<input type="hidden" name="form_type" value="customer_login" /><input type="hidden" name="utf8" value="✓" /><div class="mb-3 mb-lg-4">
+										<label class="form-label" for="CustomerEmail">
+											Email
+										</label>
+										@Html.TextBoxFor(m=>m.UserEmail, new {@class = "form-control",@id="CustomerEmail",@placeholder = "Enter Username"})
+										
+
+									</div>
+									<div class="mb-3 mb-lg-4">
+										<div class="d-flex justify-content-between">
+											<label class="form-label" for="CustomerPassword">
+												Password
+											</label>
+											<a href="#recover" class="">
+												<u>Forgot your password?</u>
+											</a>
+											
+										</div>
+											@Html.TextBoxFor(m=>m.UserPassword, new {@class = "form-control",@id="CustomerEmail",@placeholder = "Enter Username"})
+										
+									</div>
+									<div class="d-flex justify-content-between align-items-center pt-2">
+										<button class="btn rounded-pill btn-default"><span>Sign in</span></button>
+
+										<a href="register.html">
+											<u>Create account</u>
+										</a>
+									</div>
+								}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+

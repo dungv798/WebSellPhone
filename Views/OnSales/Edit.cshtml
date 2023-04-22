@@ -1,0 +1,47 @@
+﻿@model WebForSell.Models.OnSale
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>OnSale</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="OnSaleId" />
+            <div class="form-group">
+                <label asp-for="isOnSale" class="control-label"></label>
+                <input asp-for="isOnSale" class="form-control" />
+                <span asp-validation-for="isOnSale" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OnSaleName" class="control-label"></label>
+                <input asp-for="OnSaleName" class="form-control" />
+                <span asp-validation-for="OnSaleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OnSalePrice" class="control-label"></label>
+                <input asp-for="OnSalePrice" class="form-control" />
+                <span asp-validation-for="OnSalePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OnSaleImage" class="control-label"></label>
+                <input asp-for="OnSaleImage" class="form-control" />
+                <span asp-validation-for="OnSaleImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

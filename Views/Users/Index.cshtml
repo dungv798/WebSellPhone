@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WebForSell.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<p>
+    <a asp-action="Create">
+        Create New
+    </a>
+</p>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th scope="col">Tên</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mật Khẩu</th>
+                <th scope="col">Mô tả</th>
+                <th scope="col">#</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>@item.UserName</td>
+                        <td>@item.UserEmail</td>
+                        <td>@item.UserPassword</td>
+                        <td>@item.UserRole</td>
+                        <td>
+                            <a class="btn btn-primary btn-tone m-r-5" asp-area="Admin" asp-controller="Users" asp-action="Details" asp-route-id="@item.UserId">Chi tiết</a>
+                            <a class="btn btn-secondary btn-tone m-r-5" asp-area="Admin" asp-controller="Users" asp-action="Edit" asp-route-id="@item.UserId">Sửa</a>
+                            <a class="btn btn-success btn-tone m-r-5" asp-area="Admin" asp-controller="Users" asp-action="Delete" asp-route-id="@item.UserId">Xóa</a>
+
+                        </td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</div>

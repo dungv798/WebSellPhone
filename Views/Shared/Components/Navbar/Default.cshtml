@@ -1,0 +1,136 @@
+﻿@model IEnumerable<WebForSell.Models.Category>
+<nav class="main-menu__wrap">
+	<ul class="main-menu__nav list-unstyled d-flex flex-wrap m-0">
+		<li class="main-menu__nav-item menu-dropdown menu-dropdown--basic active">
+			<a class="main-menu__link" href="/Home" title="Home">
+				<span>
+					Home
+					
+				</span>
+			</a>
+
+		</li>
+		
+		<li class="main-menu__nav-item menu-dropdown">
+			<a class="main-menu__link" href="/Home/Product" title="Shops New"><span>Products <span class="label-new">New</span> </span></a>
+
+		</li>
+		
+		@foreach (var item in Model) {
+		<li class="main-menu__nav-item">
+				<a class="main-menu__link" title="New arrivals" href="/Products/ProductByCategory?catId=@item.CategoryId"><span>@item.CategoryName</span></a>
+		</li>
+		}
+		<li class="main-menu__nav-item menu-dropdown">
+			<a class="main-menu__link" href="/" title="Hot dealHot">
+				<span>
+					Hot deal<span class="label-hot">Hot</span>
+					<svg class="ms-1" width="10px" height="15px" aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 10 6">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor" />
+					</svg>
+				</span>
+			</a>
+			<div class="menu-dropdown__content menu-dropdown__content--megamenu mx-auto start-0 end-0" style="max-width: 1240px">
+				<div class="menu-row row g-3">
+					<div class="menu-row__col mb-4" style="order: 1; width: 100%">
+						<div class="megamenu-html">
+							<div class="megamenu-html__content">
+								<div class="row g-3">
+									<div class="col-12 col-md-4">
+										<div class="four-image__item  position-relative effectOne" style="--plh-svg-h: 460px;">
+											<a class="d-block overflow-hidden rounded-1" href="collections/hot-deal.html" title="">
+
+												<div class="card_wrap">
+													<div class="card__image position-relative js lazyloaded" style='padding-top: 91.4513%; background-image: url("../cdn.shopify.com/s/files/1/0354/4435/9306/files/banner61f461.jpg?v=1669717678&amp;width=503");' role="img" aria-label="" data-alt="" data-bgset="//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner61.jpg?v=1669717678&amp;width=180 180w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner61.jpg?v=1669717678&amp;width=360 360w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner61.jpg?v=1669717678&amp;width=503 503w">
+														<div class="">
+															<span class="pre-loading__bar" style="display: inline-block; width: 100%;"></span>
+															<div class="vela-loading__icon">
+																<span></span><span></span><span></span><span></span>
+															</div>
+														</div>
+														<picture style="display: none;"><source data-srcset="//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner61.jpg?v=1669717678&amp;width=180 180w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner61.jpg?v=1669717678&amp;width=360 360w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner61.jpg?v=1669717678&amp;width=503 503w" sizes="503px" srcset="//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner61.jpg?v=1669717678&amp;width=180 180w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner61.jpg?v=1669717678&amp;width=360 360w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner61.jpg?v=1669717678&amp;width=503 503w"><img alt="" class="lazyautosizes lazyloaded ls-is-cached" data-sizes="auto" data-parent-fit="cover" sizes="503px"></source></picture>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="row g-3">
+											<div class="col-12">
+												<div class="four-image__item position-relative effectOne" style="--plh-svg-h: 215px;">
+													<a class="d-block overflow-hidden rounded-1" href="collections/hot-deal.html" title="">
+
+														<div class="card_wrap">
+															<div class="card__image position-relative js lazyloaded" style='padding-top: 42.7435%; background-image: url("../cdn.shopify.com/s/files/1/0354/4435/9306/files/banner62f461.jpg?v=1669717678&amp;width=503");' role="img" aria-label="" data-alt="" data-bgset="//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner62.jpg?v=1669717678&amp;width=180 180w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner62.jpg?v=1669717678&amp;width=360 360w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner62.jpg?v=1669717678&amp;width=503 503w">
+																<div class="">
+																	<span class="pre-loading__bar" style="display: inline-block; width: 100%;"></span>
+																	<div class="vela-loading__icon">
+																		<span></span><span></span><span></span><span></span>
+																	</div>
+																</div>
+																<picture style="display: none;"><source data-srcset="//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner62.jpg?v=1669717678&amp;width=180 180w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner62.jpg?v=1669717678&amp;width=360 360w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner62.jpg?v=1669717678&amp;width=503 503w" sizes="503px" srcset="//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner62.jpg?v=1669717678&amp;width=180 180w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner62.jpg?v=1669717678&amp;width=360 360w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner62.jpg?v=1669717678&amp;width=503 503w"><img alt="" class="lazyautosizes lazyloaded ls-is-cached" data-sizes="auto" data-parent-fit="cover" sizes="503px"></source></picture>
+															</div>
+														</div>
+
+													</a>
+												</div>
+											</div>
+											<div class="col-12">
+												<div class="four-image__item position-relative effectOne" style="--plh-svg-h: 215px;">
+													<a class="d-block overflow-hidden rounded-1" href="collections/hot-deal.html" title="">
+
+														<div class="card_wrap">
+															<div class="card__image position-relative js lazyloaded" style='padding-top: 42.7435%; background-image: url("../cdn.shopify.com/s/files/1/0354/4435/9306/files/banner63f461.jpg?v=1669717678&amp;width=503");' role="img" aria-label="" data-alt="" data-bgset="//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner63.jpg?v=1669717678&amp;width=180 180w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner63.jpg?v=1669717678&amp;width=360 360w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner63.jpg?v=1669717678&amp;width=503 503w">
+																<div class="">
+																	<span class="pre-loading__bar" style="display: inline-block; width: 100%;"></span>
+																	<div class="vela-loading__icon">
+																		<span></span><span></span><span></span><span></span>
+																	</div>
+																</div>
+																<picture style="display: none;"><source data-srcset="//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner63.jpg?v=1669717678&amp;width=180 180w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner63.jpg?v=1669717678&amp;width=360 360w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner63.jpg?v=1669717678&amp;width=503 503w" sizes="503px" srcset="//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner63.jpg?v=1669717678&amp;width=180 180w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner63.jpg?v=1669717678&amp;width=360 360w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner63.jpg?v=1669717678&amp;width=503 503w"><img alt="" class="lazyautosizes lazyloaded ls-is-cached" data-sizes="auto" data-parent-fit="cover" sizes="503px"></source></picture>
+															</div>
+														</div>
+
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-12 col-lg-4">
+										<div class="four-image__item position-relative effectOne" style="--plh-svg-h: 460px;">
+											<a class="d-block overflow-hidden rounded-1" href="collections/hot-deal.html" title="">
+
+												<div class="card_wrap">
+													<div class="card__image position-relative js lazyloaded" style='padding-top: 91.4513%; background-image: url("../cdn.shopify.com/s/files/1/0354/4435/9306/files/banner64f461.jpg?v=1669717678&amp;width=503");' role="img" aria-label="" data-alt="" data-bgset="//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner64.jpg?v=1669717678&amp;width=180 180w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner64.jpg?v=1669717678&amp;width=360 360w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner64.jpg?v=1669717678&amp;width=503 503w">
+														<div class="">
+															<span class="pre-loading__bar" style="display: inline-block; width: 100%;"></span>
+															<div class="vela-loading__icon">
+																<span></span><span></span><span></span><span></span>
+															</div>
+														</div>
+														<picture style="display: none;"><source data-srcset="//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner64.jpg?v=1669717678&amp;width=180 180w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner64.jpg?v=1669717678&amp;width=360 360w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner64.jpg?v=1669717678&amp;width=503 503w" sizes="503px" srcset="//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner64.jpg?v=1669717678&amp;width=180 180w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner64.jpg?v=1669717678&amp;width=360 360w ,//cdn.shopify.com/s/files/1/0354/4435/9306/files/banner64.jpg?v=1669717678&amp;width=503 503w"><img alt="" class="lazyautosizes lazyloaded ls-is-cached" data-sizes="auto" data-parent-fit="cover" sizes="503px"></source></picture>
+													</div>
+												</div>
+
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+
+
+		<li class="main-menu__nav-item menu-dropdown menu-dropdown--basic">
+			<a class="main-menu__link" href="/Home/New" title="Blogs"><span>News</span></a>
+
+		</li>
+		<li class="main-menu__nav-item">
+			<a class="main-menu__link" title="Contact Us" asp-area="" asp-controller="Home" asp-action="Contact"><span>Contact Us</span></a>
+		</li>
+
+	</ul>
+</nav>

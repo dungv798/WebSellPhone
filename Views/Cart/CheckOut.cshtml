@@ -1,0 +1,399 @@
+﻿
+@{
+    ViewData["Title"] = "CheckOut";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+@model CartViewModel
+
+
+@if (Model == null)
+{
+    <main id="MainContent" class="main-content content-for-layout" tabindex="-1">
+        <div class="main-content__inner">
+            <div id="shopify-section-template--15545693044788__breadcrumb" class="shopify-section">
+                <style>
+                    :root {
+                        --breadcrumb-bg: #ffffff;
+                        --breadcrumb-color-link: #999999;
+                        --breadcrumb-color: #ff9300;
+                        --breadcrumb-heading-color: #222222;
+                    }
+
+                    .vela-breadcrumbs {
+                        min-height: 60px;
+                        margin: 0 auto 30px;
+                    }
+
+                    media screen and (max-width: 767px) {
+                        .vela-breadcrumbs
+
+                    {
+                        min-height: 60px;
+                    }
+
+                    }
+                </style><div class="vela-breadcrumbs d-flex flex-wrap align-items-center vela-breadcrumbs--no-image">
+                    <div class="container">
+                        <div class="vela-breadcrumbs__inner align-items-start flex-column" aria-label="breadcrumb">
+                            <h1 class="vela-breadcrumbs__title mb-2 d-none">Your Shopping Cart</h1>
+                            <ol class="breadcrumb m-0" itemscope itemtype="http://schema.org/BreadcrumbList">
+                                <li class="breadcrumb-item breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="breadcrumb__link" href="index.html" title="Home" itemprop="item">
+                                        <span itemprop="name">Home</span>
+                                    </a>
+                                    <meta itemprop="position" content="1" />
+                                </li>
+                                <li class="breadcrumb-item breadcrumb__item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <span class="breadcrumb__text">
+                                        <span itemprop="name">Your Shopping Cart</span>
+                                    </span>
+                                    <meta itemprop="position" content="2" />
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+            </div><div id="shopify-section-template--15545693044788__cart-template" class="shopify-section">
+                <link href="../cdn.shopify.com/s/files/1/0012/5334/3284/t/12/assets/component-cart21d7.css?v=74038670215202021981672313805" rel="stylesheet" type="text/css" media="all" />
+                <script src="../cdn.shopify.com/s/files/1/0012/5334/3284/t/12/assets/cart7030.js?v=54407969080770665131670405697" defer="defer"></script>
+                <div class="container d-flex flex-wrap py-5 position-relative main-cart-wrap">
+                    <div class="col-12 col-lg-8">
+                        <cart-items class="is-empty pe-0 pe-lg-4">
+                            <div class="cart__warnings position-absolute w-100 text-center">
+                                <h2 class="cart__empty-text mb-4">Your Receipt</h2>
+                                <a href="collections/all.html" class="btn rounded-pill btn-default">
+                                    <span><svg class="me-1" width="24" height="24" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><g><path d="M 4,15.004C 4,15.132, 4.028,15.26, 4.078,15.382c 0.048,0.118, 0.12,0.224, 0.208,0.314 C 4.288,15.7, 4.29,15.704, 4.292,15.708l 6,6c 0.39,0.39, 1.024,0.39, 1.414,0c 0.39-0.39, 0.39-1.024,0-1.414L 7.414,16L 27,16 C 27.552,16, 28,15.552, 28,15C 28,14.448, 27.552,14, 27,14L 7.414,14 l 4.292-4.292c 0.39-0.39, 0.39-1.024,0-1.414 c-0.39-0.39-1.024-0.39-1.414,0l-6,6C 4.29,14.296, 4.288,14.302, 4.286,14.304C 4.198,14.394, 4.126,14.5, 4.078,14.618 C 4.026,14.74, 4,14.87, 4,15l0,0C 4,15.002, 4,15.002, 4,15.004z"></path></g></svg>Continue shopping</span>
+                                </a>
+                            </div>
+                            <h1 class="mb-4 page-title">Your Receipt</h1>
+                            <form action="https://velanetro.myshopify.com/cart" class="cart__contents critical-hidden" method="post" id="cart">
+                                <div class="cart__items" id="main-cart-items" data-id="template--15545693044788__cart-template">
+                                    <div class="js-contents"></div>
+                                </div>
+                                <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
+                                <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">Loading...</p>
+                            </form>
+                        </cart-items>
+                    </div>
+                    <div class="col-12 col-lg-4 mt-3 mt-lg-5">
+                        <div class="is-empty p-3 p-lg-4 mt-3" id="main-cart-footer" data-id="template--15545693044788__cart-template">
+                            <div class="cart__footer">
+                                <cart-note class="cart__note d-block border-bottom pb-3 mb-3">
+                                    <label class="h6 mb-1" for="Cart-note">Order special instructions</label>
+                                    <textarea class="text-area text-area--resize-vertical form-control rounded-1" name="note" rows="4" id="Cart-note" placeholder="Order special instructions"></textarea>
+                                </cart-note><div clas="cart__footer--body">
+                                    <div class="js-contents1">
+                                        <div class="totals d-flex justify-content-between">
+                                            <h5 class="totals__subtotal">Subtotal:</h5>
+                                            <p class="totals__subtotal-value product-price">$0.00</p>
+                                        </div><div class="tax-note text-end mb-3">
+                                            Taxes and <a href="policies/shipping-policy.html">shipping</a> calculated at checkout
+                                        </div>
+                                    </div>
+                                    <div class="cart__ctas">
+                                        <button type="submit" class="cart__checkout-button btn" name="checkout" disabled form="cart">
+                                            <span>Check out</span>
+                                        </button>
+                                    </div><div id="cart-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </main>
+}
+else if (Model.CartItems.Count > 0)
+{
+    <main id="MainContent" class="main-content content-for-layout" tabindex="-1">
+        <div class="main-content__inner">
+            <div id="shopify-section-template--15545693044788__breadcrumb" class="shopify-section">
+                <style>
+                    :root {
+                        --breadcrumb-bg: #ffffff;
+                        --breadcrumb-color-link: #999999;
+                        --breadcrumb-color: #ff9300;
+                        --breadcrumb-heading-color: #222222;
+                    }
+
+                    .vela-breadcrumbs {
+                        min-height: 60px;
+                        margin: 0 auto 30px;
+                    }
+
+                    media screen and (max-width: 767px) {
+                        .vela-breadcrumbs
+
+                    {
+                        min-height: 60px;
+                    }
+
+                    }
+                </style>
+                <div class="vela-breadcrumbs d-flex flex-wrap align-items-center vela-breadcrumbs--no-image">
+                    <div class="container">
+                        <div class="vela-breadcrumbs__inner align-items-start flex-column" aria-label="breadcrumb">
+                            <h1 class="vela-breadcrumbs__title mb-2 d-none">Your Receiptt</h1>
+                            <ol class="breadcrumb m-0" itemscope itemtype="http://schema.org/BreadcrumbList">
+                                <li class="breadcrumb-item breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="breadcrumb__link" href="/Home" title="Home" itemprop="item">
+                                        <span itemprop="name">Home</span>
+                                    </a>
+                                    <meta itemprop="position" content="1" />
+                                </li>
+                                <li class="breadcrumb-item breadcrumb__item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <span class="breadcrumb__text">
+                                        <span itemprop="name">Your Shopping Receipt</span>
+                                    </span>
+                                    <meta itemprop="position" content="2" />
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="shopify-section-template--15545693044788__cart-template" class="shopify-section">
+                <link href="//cdn.shopify.com/s/files/1/0012/5334/3284/t/12/assets/component-cart.css?v=74038670215202021981672313805" rel="stylesheet" type="text/css" media="all" />
+                <script src="//cdn.shopify.com/s/files/1/0012/5334/3284/t/12/assets/cart.js?v=54407969080770665131670405697" defer="defer"></script>
+                <div class="container d-flex flex-wrap py-5 position-relative main-cart-wrap">
+                    <div class="col-12 col-lg-8">
+                        <cart-items class=" pe-0 pe-lg-4">
+                            <div class="cart__warnings position-absolute w-100 text-center">
+                                <h2 class="cart__empty-text mb-4">Your cart is empty</h2>
+                                <a href="/collections/all" class="btn rounded-pill btn-default">
+                                    <span><svg class="me-1" width="24" height="24" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><g><path d="M 4,15.004C 4,15.132, 4.028,15.26, 4.078,15.382c 0.048,0.118, 0.12,0.224, 0.208,0.314 C 4.288,15.7, 4.29,15.704, 4.292,15.708l 6,6c 0.39,0.39, 1.024,0.39, 1.414,0c 0.39-0.39, 0.39-1.024,0-1.414L 7.414,16L 27,16 C 27.552,16, 28,15.552, 28,15C 28,14.448, 27.552,14, 27,14L 7.414,14 l 4.292-4.292c 0.39-0.39, 0.39-1.024,0-1.414 c-0.39-0.39-1.024-0.39-1.414,0l-6,6C 4.29,14.296, 4.288,14.302, 4.286,14.304C 4.198,14.394, 4.126,14.5, 4.078,14.618 C 4.026,14.74, 4,14.87, 4,15l0,0C 4,15.002, 4,15.002, 4,15.004z"></path></g></svg>Continue shopping</span>
+                                </a>
+                            </div>
+                            <h1 class="mb-4 page-title">Your Receipt</h1>
+                            <form action="/cart" class="cart__contents critical-hidden" method="post" id="cart">
+                                <div class="cart__items" id="main-cart-items" data-id="template--15545693044788__cart-template">
+                                    <div class="js-contents">
+                                        <div class="cart__items--wrapp">
+                                            <div class="cart-items">
+                                                <div class="cart-items--heading h6 py-2">
+                                                    <div class="row fw-medium">
+                                                        <div class="col-4 col-sm-3"><span class="px-3">Product</span></div>
+                                                        <div class="col-8 col-sm-6"><span class="px-3">Quantity</span></div>
+                                                        <div class="col-3 text-end d-none d-sm-block"><span class="px-3">Total</span></div>
+                                                    </div>
+                                                </div>
+                                                @foreach (var item in Model.CartItems)
+                                                {
+                                                    <div class="cart-items--body">
+                                                        <div class="cart-item py-4 " id="CartItem-1">
+                                                            <div class="row">
+                                                                <div class="cart-item__media col-4 col-sm-3">
+                                                                    <div class="position-relative d-inline-block">
+
+                                                                        <img src="@item.Image" alt="" width="160" height="160.0" loading="lazy" class="cart-item__image img-fluid">
+
+                                                                    </div>
+                                                                </div>
+                                                                <div class="cart-item__details col-8 col-sm-6 d-flex flex-column">
+                                                                    <a href="/products/copy-of-blink-home-security-camera-system" class="cart-item__name mb-1 link"><span>@item.ProductName</span></a>
+                                                                    <div class="cart-item__price-wrapper d-flex mb-1">
+                                                                        <span class="price product-price">
+                                                                            @item.Price.ToString()
+                                                                        </span>
+                                                                        <p class="cart-item__error" id="Line-item-error-1">
+                                                                            <span class="cart-item__error-text"></span>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="cart-item__quantity d-flex pt-2">
+                                                                        <label class="d-none" for="Quantity-1">
+                                                                            @item.Quantity
+                                                                        </label>
+                                                                        <quantity-input class="quantity d-flex">
+                                                                            <a asp-action="Decrease" asp-route-id="@item.ProductId" class="quantity__button" name="minus" type="button">
+                                                                                <svg class="icon-minus" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.625 0H9.79167C9.90677 0 10 0.111875 10 0.25V1.25C10 1.38812 9.90677 1.5 9.79167 1.5H5.625H4.375H0.208333C0.0932292 1.5 0 1.38812 0 1.25V0.25C0 0.111875 0.0932292 0 0.208333 0H4.375H5.625Z" fill="currentColor" /></svg>
+                                                                            </a>
+                                                                            <input class="quantity__input" type="number" name="updates[]" value="@item.Quantity" min="0" id="Quantity-1" data-index="1">
+                                                                            <a asp-action="Add" asp-route-id="@item.ProductId" class="quantity__button" name="plus" type="button">+</a>
+                                                                        </quantity-input>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="cart-item__totals col-12 col-sm-3 text-sm-end">
+                                                                    <div class="row pt-3 pt-sm-0">
+                                                                        <div class="col-4 d-block d-sm-none"><span class="h5">Total:</div>
+                                                                        <div class="col-8 col-sm-12 position-relative">
+                                                                            <div class="pre-loading position-absolute d-none">
+                                                                                <span class="pre-loading__bar"></span>
+                                                                                <div class="vela-loading__icon"><span></span><span></span><span></span><span></span></div>
+                                                                            </div>
+                                                                            <div class="cart-item__price-wrapper medium-up">
+                                                                                <a class="d-block" a asp-action="Remove" asp-route-id="@item.ProductId">
+
+                                                                                </a><span class="price product-price">
+                                                                                    @Model.CartItems.Where(x => x.ProductId == item.ProductId).Sum(x => x.Quantity * x.Price).ToString()
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
+                                <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">Loading...</p>
+                            </form>
+                        </cart-items>
+                    </div>
+                    <div class="col-12 col-lg-4 mt-3 mt-lg-5">
+                        <div class=" p-3 p-lg-4 mt-3" id="main-cart-footer" data-id="template--15545693044788__cart-template">
+                            <div class="cart__footer">
+                                <cart-note class="cart__note d-block border-bottom pb-3 mb-3">
+                                    <label class="h6 mb-1" for="Cart-note">Order special instructions</label>
+                                    <textarea class="text-area text-area--resize-vertical form-control rounded-1" name="note" rows="4" id="Cart-note" placeholder="Order special instructions"></textarea>
+                                </cart-note>
+                                <div clas="cart__footer--body">
+                                    <div class="js-contents1">
+                                        <div class="totals d-flex justify-content-between">
+                                            <h5 class="totals__subtotal">Subtotal:</h5>
+                                            <p class="totals__subtotal-value product-price">@Model.GrandToTal.ToString("C2") </p>
+                                        </div>
+                                        <div class="tax-note text-end mb-3">
+                                            Taxes and <a href="/policies/shipping-policy">shipping</a> calculated at checkout
+                                        </div>
+                                    </div>
+                                    <div class="cart__ctas">
+                                        <button type="submit" class="cart__checkout-button btn" name="checkout">
+                                            <a href=""> <span>Check out</span></a>
+                                        </button>
+
+                                    </div>
+                                    <div id="cart-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </main>
+}
+else
+{
+
+
+    <main id="MainContent" class="main-content content-for-layout" tabindex="-1">
+        <div class="main-content__inner">
+            <div id="shopify-section-template--15545693044788__breadcrumb" class="shopify-section">
+                <style>
+                    :root {
+                        --breadcrumb-bg: #ffffff;
+                        --breadcrumb-color-link: #999999;
+                        --breadcrumb-color: #ff9300;
+                        --breadcrumb-heading-color: #222222;
+                    }
+
+                    .vela-breadcrumbs {
+                        min-height: 60px;
+                        margin: 0 auto 30px;
+                    }
+
+                    media screen and (max-width: 767px) {
+                        .vela-breadcrumbs
+
+                    {
+                        min-height: 60px;
+                    }
+
+                    }
+                </style><div class="vela-breadcrumbs d-flex flex-wrap align-items-center vela-breadcrumbs--no-image">
+                    <div class="container">
+                        <div class="vela-breadcrumbs__inner align-items-start flex-column" aria-label="breadcrumb">
+                            <h1 class="vela-breadcrumbs__title mb-2 d-none">Your Shopping Cart</h1>
+                            <ol class="breadcrumb m-0" itemscope itemtype="http://schema.org/BreadcrumbList">
+                                <li class="breadcrumb-item breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <a class="breadcrumb__link" href="index.html" title="Home" itemprop="item">
+                                        <span itemprop="name">Home</span>
+                                    </a>
+                                    <meta itemprop="position" content="1" />
+                                </li>
+                                <li class="breadcrumb-item breadcrumb__item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <span class="breadcrumb__text">
+                                        <span itemprop="name">Your Shopping Cart</span>
+                                    </span>
+                                    <meta itemprop="position" content="2" />
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+            </div><div id="shopify-section-template--15545693044788__cart-template" class="shopify-section">
+                <link href="../cdn.shopify.com/s/files/1/0012/5334/3284/t/12/assets/component-cart21d7.css?v=74038670215202021981672313805" rel="stylesheet" type="text/css" media="all" />
+                <script src="../cdn.shopify.com/s/files/1/0012/5334/3284/t/12/assets/cart7030.js?v=54407969080770665131670405697" defer="defer"></script>
+                <div class="container d-flex flex-wrap py-5 position-relative main-cart-wrap">
+                    <div class="col-12 col-lg-8">
+                        <cart-items class="is-empty pe-0 pe-lg-4">
+                            <div class="cart__warnings position-absolute w-100 text-center">
+                                <h2 class="cart__empty-text mb-4">Your cart is empty</h2>
+                                <a href="collections/all.html" class="btn rounded-pill btn-default">
+                                    <span><svg class="me-1" width="24" height="24" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><g><path d="M 4,15.004C 4,15.132, 4.028,15.26, 4.078,15.382c 0.048,0.118, 0.12,0.224, 0.208,0.314 C 4.288,15.7, 4.29,15.704, 4.292,15.708l 6,6c 0.39,0.39, 1.024,0.39, 1.414,0c 0.39-0.39, 0.39-1.024,0-1.414L 7.414,16L 27,16 C 27.552,16, 28,15.552, 28,15C 28,14.448, 27.552,14, 27,14L 7.414,14 l 4.292-4.292c 0.39-0.39, 0.39-1.024,0-1.414 c-0.39-0.39-1.024-0.39-1.414,0l-6,6C 4.29,14.296, 4.288,14.302, 4.286,14.304C 4.198,14.394, 4.126,14.5, 4.078,14.618 C 4.026,14.74, 4,14.87, 4,15l0,0C 4,15.002, 4,15.002, 4,15.004z"></path></g></svg>Continue shopping</span>
+                                </a>
+                            </div>
+                            <h1 class="mb-4 page-title">Your cart</h1>
+                            <form action="https://velanetro.myshopify.com/cart" class="cart__contents critical-hidden" method="post" id="cart">
+                                <div class="cart__items" id="main-cart-items" data-id="template--15545693044788__cart-template">
+                                    <div class="js-contents"></div>
+                                </div>
+                                <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
+                                <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite" aria-hidden="true" role="status">Loading...</p>
+                            </form>
+                        </cart-items>
+                    </div>
+                    <div class="col-12 col-lg-4 mt-3 mt-lg-5">
+                        <div class="is-empty p-3 p-lg-4 mt-3" id="main-cart-footer" data-id="template--15545693044788__cart-template">
+                            <div class="cart__footer">
+                                <cart-note class="cart__note d-block border-bottom pb-3 mb-3">
+                                    <label class="h6 mb-1" for="Cart-note">Order special instructions</label>
+                                    <textarea class="text-area text-area--resize-vertical form-control rounded-1" name="note" rows="4" id="Cart-note" placeholder="Order special instructions"></textarea>
+                                </cart-note><div clas="cart__footer--body">
+                                    <div class="js-contents1">
+                                        <div class="totals d-flex justify-content-between">
+                                            <h5 class="totals__subtotal">Subtotal:</h5>
+                                            <p class="totals__subtotal-value product-price">$0.00</p>
+                                        </div><div class="tax-note text-end mb-3">
+                                            Taxes and <a href="policies/shipping-policy.html">shipping</a> calculated at checkout
+                                        </div>
+                                    </div>
+                                    <div class="cart__ctas">
+                                        <button type="submit" class="cart__checkout-button btn" name="checkout" disabled form="cart">
+                                            <span>Check out</span>
+                                        </button>
+                                    </div><div id="cart-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </main>
+
+}
+
+

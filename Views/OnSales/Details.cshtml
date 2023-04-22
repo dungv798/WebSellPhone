@@ -1,0 +1,43 @@
+﻿@model WebForSell.Models.OnSale
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>OnSale</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.isOnSale)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.isOnSale)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OnSaleName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OnSaleName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OnSalePrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OnSalePrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OnSaleImage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OnSaleImage)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.OnSaleId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

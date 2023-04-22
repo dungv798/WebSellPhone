@@ -1,0 +1,66 @@
+﻿@model IEnumerable<WebForSell.Models.HomeProduct>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewArr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TopSell)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OnSale)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastestProduct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dofweek)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewArr.NewArrName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TopSell.TopSellName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OnSale.OnSaleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastestProduct.LastestProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dofweek.DofweekImage)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.HomeProductId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.HomeProductId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.HomeProductId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

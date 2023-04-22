@@ -1,0 +1,52 @@
+﻿@model WebForSell.Models.Dofweek
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Dofweek</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DofweekId" />
+            <div class="form-group">
+                <label asp-for="isDoTW" class="control-label"></label>
+                <input asp-for="isDoTW" class="form-control" />
+                <span asp-validation-for="isDoTW" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DofweekName" class="control-label"></label>
+                <input asp-for="DofweekName" class="form-control" />
+                <span asp-validation-for="DofweekName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DofweekPrice" class="control-label"></label>
+                <input asp-for="DofweekPrice" class="form-control" />
+                <span asp-validation-for="DofweekPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DofweekDescription" class="control-label"></label>
+                <input asp-for="DofweekDescription" class="form-control" />
+                <span asp-validation-for="DofweekDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DofweekImage" class="control-label"></label>
+                <input asp-for="DofweekImage" class="form-control" />
+                <span asp-validation-for="DofweekImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

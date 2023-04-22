@@ -1,0 +1,49 @@
+﻿@model WebForSell.Models.Dofweek
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Dofweek</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.isDoTW)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.isDoTW)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DofweekName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DofweekName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DofweekPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DofweekPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DofweekDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DofweekDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DofweekImage)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DofweekImage)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.DofweekId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

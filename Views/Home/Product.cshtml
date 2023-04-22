@@ -1,0 +1,649 @@
+﻿@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<WebForSell.Models.Product>
+
+<main id="MainContent" class="main-content content-for-layout" tabindex="-1">
+    <div class="main-content__inner">
+        <section id="shopify-section-template--15545693143092__breadcrumb" class="shopify-section">
+            <style>
+                :root {
+                    --breadcrumb-bg: #ffffff;
+                    --breadcrumb-color-link: #999999;
+                    --breadcrumb-color: #ff9300;
+                    --breadcrumb-heading-color: #222222;
+                }
+
+                .vela-breadcrumbs {
+                    min-height: 60px;
+                    margin: 0 auto 30px;
+                }
+
+                media screen and (max-width: 767px) {
+                    .vela-breadcrumbs
+
+                {
+                    min-height: 60px;
+                }
+
+                }
+            </style>
+            <div class="vela-breadcrumbs d-flex flex-wrap align-items-center vela-breadcrumbs--no-image">
+                <div class="container">
+                    <div class="vela-breadcrumbs__inner align-items-start flex-column" aria-label="breadcrumb">
+                        <h1 class="vela-breadcrumbs__title mb-2 d-none">Home page</h1>
+                        <ol class="breadcrumb m-0" itemscope itemtype="http://schema.org/BreadcrumbList">
+                            <li class="breadcrumb-item breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <a class="breadcrumb__link" href="/Home" title="Home" itemprop="item">
+                                    <span itemprop="name">Home</span>
+                                </a>
+                                <meta itemprop="position" content="1" />
+                            </li>
+                            <li class="breadcrumb-item breadcrumb__item active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <span class="breadcrumb__text">
+                                    <span itemprop="name">Product</span>
+                                </span>
+                                <meta itemprop="position" content="3" />
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <div id="shopify-section-template--15545693143092__product-grid" class="shopify-section">
+            <link href="//cdn.shopify.com/s/files/1/0012/5334/3284/t/12/assets/template-collection.css?v=74455049511453905141672313804" rel="stylesheet" type="text/css" media="all" />
+            <link href="//cdn.shopify.com/s/files/1/0012/5334/3284/t/12/assets/collection-sidebar.css?v=85449460840559365691672313802" rel="stylesheet" type="text/css" media="all" />
+            <link href="//cdn.shopify.com/s/files/1/0012/5334/3284/t/12/assets/ion.rangeSlider.min.css?v=132298657292053752011672390244" rel="stylesheet" type="text/css" media="all" />
+            <script src="//cdn.shopify.com/s/files/1/0012/5334/3284/t/12/assets/ion.rangeSlider.min.js?v=175507048169275933521670405698" async="async"></script>
+            <div id="ProductGridContainer" class="collection-page mb-xl-5">
+                <div class="container">
+                    <div class="row g-3 g-md-4 sidebarleft">
+                        <div class="collection-sidebar sidebar-left col col-auto">
+
+                            <button class="js-sidebar-toggle collection-sidebar__close d-block d-lg-none" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" fill="none" viewBox="0 0 18 17">
+                                    <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor" />
+                                </svg>
+                            </button>
+                            <div class="js-sidebar-toggle collection-sidebar__overlay d-block d-lg-none"></div>
+                            <div class="collection-sidebar__wapper">
+                                @await Component.InvokeAsync("_CategorySide")
+                                <div class="product-filter pt-sm-4 pt-2 mt-3">
+                                    <facet-filters-form class="product-filter">
+                                        <form id="CollectionFiltersForm" class="product-filter__form">
+                                            <h5 class="block-sidebar__title border-bottom border-2 mb-4">
+                                                Filter By
+                                            </h5>
+                                            <div class="product-filter__wrapper">
+                                                <input type="hidden" name="sort_by" value="created-descending" />
+                                                <div class="block-sidebar  js-filter" data-index="1">
+                                                    <h6 class="product-filter__title position-relative m-0">
+                                                        Color
+                                                        <span class="facets__selected no-js-hidden"></span>
+                                                        <facet-remove class="position-absolute">
+                                                            <a href="/collections/frontpage" class="facets__reset link--text">
+                                                                Reset
+                                                            </a>
+                                                        </facet-remove>
+                                                    </h6>
+                                                    <div id="filter1" class="block-sidebar__content product-filter__content">
+                                                        <div class="block-sidebar__content--inner mt-2 pt-1">
+                                                            <ul class="facets__list list-unstyled filter_list m-0">
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Color-1" class="facet-checkbox facet-checkbox--color">
+                                                                        <input type="checkbox"
+                                                                               name="filter.v.option.color"
+                                                                               value="Black"
+                                                                               id="Filter-Color-1"><span class="d-flex rounded-circle overflow-hidden position-relative color-box me-2" style="background-color:black; background-image: url(//cdn.shopify.com/s/files/1/0012/5334/3284/files/black.png?v=18237608327431082828); background-size: cover;">
+                                                                        </span><span class="text">Black</span><span class="number-item">(2)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Color-2" class="facet-checkbox facet-checkbox--color">
+                                                                        <input type="checkbox"
+                                                                               name="filter.v.option.color"
+                                                                               value="Gold"
+                                                                               id="Filter-Color-2"><span class="d-flex rounded-circle overflow-hidden position-relative color-box me-2" style="background-color:gold; background-image: url(//cdn.shopify.com/s/files/1/0012/5334/3284/files/gold.png?4926); background-size: cover;">
+                                                                        </span><span class="text">Gold</span><span class="number-item">(1)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Color-3" class="facet-checkbox facet-checkbox--color">
+                                                                        <input type="checkbox"
+                                                                               name="filter.v.option.color"
+                                                                               value="Grey"
+                                                                               id="Filter-Color-3"><span class="d-flex rounded-circle overflow-hidden position-relative color-box me-2" style="background-color:grey; background-image: url(//cdn.shopify.com/s/files/1/0012/5334/3284/files/grey.png?4926); background-size: cover;">
+                                                                        </span><span class="text">Grey</span><span class="number-item">(1)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Color-4" class="facet-checkbox facet-checkbox--color">
+                                                                        <input type="checkbox"
+                                                                               name="filter.v.option.color"
+                                                                               value="Orange"
+                                                                               id="Filter-Color-4"><span class="d-flex rounded-circle overflow-hidden position-relative color-box me-2" style="background-color:orange; background-image: url(//cdn.shopify.com/s/files/1/0012/5334/3284/files/orange.png?v=12510544399472783739); background-size: cover;">
+                                                                        </span><span class="text">Orange</span><span class="number-item">(2)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Color-5" class="facet-checkbox facet-checkbox--color">
+                                                                        <input type="checkbox"
+                                                                               name="filter.v.option.color"
+                                                                               value="Pink"
+                                                                               id="Filter-Color-5"><span class="d-flex rounded-circle overflow-hidden position-relative color-box me-2" style="background-color:pink; background-image: url(//cdn.shopify.com/s/files/1/0012/5334/3284/files/pink.png?v=10195151028091414882); background-size: cover;">
+                                                                        </span><span class="text">Pink</span><span class="number-item">(2)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Color-6" class="facet-checkbox facet-checkbox--color">
+                                                                        <input type="checkbox"
+                                                                               name="filter.v.option.color"
+                                                                               value="Red"
+                                                                               id="Filter-Color-6"><span class="d-flex rounded-circle overflow-hidden position-relative color-box me-2" style="background-color:red; background-image: url(//cdn.shopify.com/s/files/1/0012/5334/3284/files/red.png?v=5951799439883917638); background-size: cover;">
+                                                                        </span><span class="text">Red</span><span class="number-item">(1)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Color-7" class="facet-checkbox facet-checkbox--color">
+                                                                        <input type="checkbox"
+                                                                               name="filter.v.option.color"
+                                                                               value="White"
+                                                                               id="Filter-Color-7"><span class="d-flex rounded-circle overflow-hidden position-relative color-box me-2" style="background-color:white; background-image: url(//cdn.shopify.com/s/files/1/0012/5334/3284/files/white.png?v=6798646103855154337); background-size: cover;">
+                                                                        </span><span class="text">White</span><span class="number-item">(2)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Color-8" class="facet-checkbox facet-checkbox--color">
+                                                                        <input type="checkbox"
+                                                                               name="filter.v.option.color"
+                                                                               value="Yellow"
+                                                                               id="Filter-Color-8"><span class="d-flex rounded-circle overflow-hidden position-relative color-box me-2" style="background-color:yellow; background-image: url(//cdn.shopify.com/s/files/1/0012/5334/3284/files/yellow.png?v=5674479459882342465); background-size: cover;">
+                                                                        </span><span class="text">Yellow</span><span class="number-item">(1)</span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="block-sidebar pt-3 pt-md-4 pt-xxl-5" data-index="2">
+                                                    <h6 class="product-filter__title position-relative m-0">
+                                                        Price
+                                                    </h6>
+                                                    <div id="filter2" class="product-filter-price__content pt-2">
+                                                        <div class="mt-2 pt-1">
+                                                            <price-range class="facets__price position-relative d-block">
+                                                                <div class="d-flex djustify-content-between align-items-center mb-3">
+                                                                    <div class="col position-relative">
+                                                                        <span class="prefix position-absolute top-50 start-0 translate-middle-y ms-1 text-color-light">$</span>
+                                                                        <input class="text-end w-100 px-2" id="min_price" name="filter.v.price.gte" id="Filter-Price-GTE" type="number" placeholder="0" min="0" max="601" />
+                                                                    </div>
+                                                                    <div class="col position-relative text-center">To</div>
+                                                                    <div class="col position-relative">
+                                                                        <span class="prefix position-absolute top-50 start-0 translate-middle-y ms-1 text-color-light">$</span>
+                                                                        <input id="max_price" class="text-end w-100 px-2" name="filter.v.price.lte" id="Filter-Price-LTE" value="" type="number" min="0" placeholder="601" max="601" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="price-slider-range">
+                                                                    <div id="slider-range" class="price-filter-range" name="rangeInput" data-min="0" data-prefix="$" data-max="601"></div>
+                                                                </div>
+                                                            </price-range>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="block-sidebar pt-3 pt-md-4 pt-xxl-5 js-filter" data-index="3">
+                                                    <h6 class="product-filter__title position-relative m-0">
+                                                        Size
+                                                        <span class="facets__selected no-js-hidden"></span>
+                                                        <facet-remove class="position-absolute">
+                                                            <a href="/collections/frontpage" class="facets__reset link--text">
+                                                                Reset
+                                                            </a>
+                                                        </facet-remove>
+                                                    </h6>
+                                                    <div id="filter3" class="block-sidebar__content product-filter__content">
+                                                        <div class="block-sidebar__content--inner mt-2 pt-1">
+                                                            <ul class="facets__list list-unstyled filter_list m-0">
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Size-1" class="facet-checkbox">
+                                                                        <input type="checkbox"
+                                                                               name="filter.v.option.size"
+                                                                               value="XS"
+                                                                               id="Filter-Size-1"><span class="text">XS</span>
+                                                                        <svg class="icon circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216z" /></svg>
+                                                                        <svg class="icon check-circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" /></svg><span class="number-item">(1)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Size-2" class="facet-checkbox">
+                                                                        <input type="checkbox"
+                                                                               name="filter.v.option.size"
+                                                                               value="S"
+                                                                               id="Filter-Size-2"><span class="text">S</span>
+                                                                        <svg class="icon circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216z" /></svg>
+                                                                        <svg class="icon check-circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" /></svg><span class="number-item">(3)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Size-3" class="facet-checkbox">
+                                                                        <input type="checkbox"
+                                                                               name="filter.v.option.size"
+                                                                               value="M"
+                                                                               id="Filter-Size-3"><span class="text">M</span>
+                                                                        <svg class="icon circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216z" /></svg>
+                                                                        <svg class="icon check-circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" /></svg><span class="number-item">(1)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Size-4" class="facet-checkbox">
+                                                                        <input type="checkbox"
+                                                                               name="filter.v.option.size"
+                                                                               value="XL"
+                                                                               id="Filter-Size-4"><span class="text">XL</span>
+                                                                        <svg class="icon circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216z" /></svg>
+                                                                        <svg class="icon check-circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" /></svg><span class="number-item">(3)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Size-5" class="facet-checkbox">
+                                                                        <input type="checkbox"
+                                                                               name="filter.v.option.size"
+                                                                               value="XXL"
+                                                                               id="Filter-Size-5"><span class="text">XXL</span>
+                                                                        <svg class="icon circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216z" /></svg>
+                                                                        <svg class="icon check-circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" /></svg><span class="number-item">(3)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Size-6" class="facet-checkbox">
+                                                                        <input type="checkbox"
+                                                                               name="filter.v.option.size"
+                                                                               value="X"
+                                                                               id="Filter-Size-6"><span class="text">X</span>
+                                                                        <svg class="icon circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216z" /></svg>
+                                                                        <svg class="icon check-circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" /></svg><span class="number-item">(3)</span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="block-sidebar pt-3 pt-md-4 pt-xxl-5 js-filter" data-index="4">
+                                                    <h6 class="product-filter__title position-relative m-0">
+                                                        Product type
+                                                        <span class="facets__selected no-js-hidden"></span>
+                                                        <facet-remove class="position-absolute">
+                                                            <a href="/collections/frontpage" class="facets__reset link--text">
+                                                                Reset
+                                                            </a>
+                                                        </facet-remove>
+                                                    </h6>
+                                                    <div id="filter4" class="block-sidebar__content product-filter__content">
+                                                        <div class="block-sidebar__content--inner mt-2 pt-1">
+                                                            <ul class="facets__list list-unstyled filter_list m-0">
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Product type-1" class="facet-checkbox">
+                                                                        <input type="checkbox"
+                                                                               name="filter.p.product_type"
+                                                                               value="Denim"
+                                                                               id="Filter-Product type-1"><span class="text">Denim</span>
+                                                                        <svg class="icon circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216z" /></svg>
+                                                                        <svg class="icon check-circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" /></svg><span class="number-item">(22)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Product type-2" class="facet-checkbox">
+                                                                        <input type="checkbox"
+                                                                               name="filter.p.product_type"
+                                                                               value="Furniture"
+                                                                               id="Filter-Product type-2"><span class="text">Furniture</span>
+                                                                        <svg class="icon circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216z" /></svg>
+                                                                        <svg class="icon check-circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" /></svg><span class="number-item">(7)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Product type-3" class="facet-checkbox">
+                                                                        <input type="checkbox"
+                                                                               name="filter.p.product_type"
+                                                                               value="Shoes"
+                                                                               id="Filter-Product type-3"><span class="text">Shoes</span>
+                                                                        <svg class="icon circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216z" /></svg>
+                                                                        <svg class="icon check-circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" /></svg><span class="number-item">(1)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Product type-4" class="facet-checkbox">
+                                                                        <input type="checkbox"
+                                                                               name="filter.p.product_type"
+                                                                               value="T-Shirts"
+                                                                               id="Filter-Product type-4"><span class="text">T-Shirts</span>
+                                                                        <svg class="icon circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216z" /></svg>
+                                                                        <svg class="icon check-circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" /></svg><span class="number-item">(5)</span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="block-sidebar pt-3 pt-md-4 pt-xxl-5 js-filter" data-index="5">
+                                                    <h6 class="product-filter__title position-relative m-0">
+                                                        Brand
+                                                        <span class="facets__selected no-js-hidden"></span>
+                                                        <facet-remove class="position-absolute">
+                                                            <a href="/collections/frontpage" class="facets__reset link--text">
+                                                                Reset
+                                                            </a>
+                                                        </facet-remove>
+                                                    </h6>
+                                                    <div id="filter5" class="block-sidebar__content product-filter__content">
+                                                        <div class="block-sidebar__content--inner mt-2 pt-1">
+                                                            <ul class="facets__list list-unstyled filter_list m-0">
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Brand-1" class="facet-checkbox">
+                                                                        <input type="checkbox"
+                                                                               name="filter.p.vendor"
+                                                                               value="Babaton"
+                                                                               id="Filter-Brand-1"><span class="text">Babaton</span>
+                                                                        <svg class="icon circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216z" /></svg>
+                                                                        <svg class="icon check-circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" /></svg><span class="number-item">(2)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Brand-2" class="facet-checkbox">
+                                                                        <input type="checkbox"
+                                                                               name="filter.p.vendor"
+                                                                               value="Charles &amp; Keith"
+                                                                               id="Filter-Brand-2"><span class="text">Charles &amp; Keith</span>
+                                                                        <svg class="icon circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216z" /></svg>
+                                                                        <svg class="icon check-circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" /></svg><span class="number-item">(8)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Brand-3" class="facet-checkbox">
+                                                                        <input type="checkbox"
+                                                                               name="filter.p.vendor"
+                                                                               value="Citizens of Humanity"
+                                                                               id="Filter-Brand-3"><span class="text">Citizens of Humanity</span>
+                                                                        <svg class="icon circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216z" /></svg>
+                                                                        <svg class="icon check-circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" /></svg><span class="number-item">(1)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Brand-4" class="facet-checkbox">
+                                                                        <input type="checkbox"
+                                                                               name="filter.p.vendor"
+                                                                               value="Shopbop"
+                                                                               id="Filter-Brand-4"><span class="text">Shopbop</span>
+                                                                        <svg class="icon circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216z" /></svg>
+                                                                        <svg class="icon check-circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" /></svg><span class="number-item">(1)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Brand-5" class="facet-checkbox">
+                                                                        <input type="checkbox"
+                                                                               name="filter.p.vendor"
+                                                                               value="Sunday Best"
+                                                                               id="Filter-Brand-5"><span class="text">Sunday Best</span>
+                                                                        <svg class="icon circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216z" /></svg>
+                                                                        <svg class="icon check-circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" /></svg><span class="number-item">(22)</span>
+                                                                    </label>
+                                                                </li>
+                                                                <li class="list-menu__item facets__item">
+                                                                    <label for="Filter-Brand-6" class="facet-checkbox">
+                                                                        <input type="checkbox"
+                                                                               name="filter.p.vendor"
+                                                                               value="Wilfred"
+                                                                               id="Filter-Brand-6"><span class="text">Wilfred</span>
+                                                                        <svg class="icon circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm216 248c0 118.7-96.1 216-216 216-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216z" /></svg>
+                                                                        <svg class="icon check-circle me-2" width=18 height=18 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" /></svg><span class="number-item">(1)</span>
+                                                                    </label>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </facet-filters-form>
+                                </div>
+                                <div class="product-banner pt-sm-4 pt-2 mt-3">
+                                    <a class="py-2 d-block overflow-hidden rounded-1" href="/collections/all" title="Outstock">
+                                        <div class="card_wrap">
+                                            <div class="card__image position-relative lazyload js" style="padding-top:142.96296296296296%;" role="img" aria-label="" data-alt="" data-bgset="//cdn.shopify.com/s/files/1/0012/5334/3284/files/banner2.jpg?v=1613694538&width=180 180w ,//cdn.shopify.com/s/files/1/0012/5334/3284/files/banner2.jpg?v=1613694538&width=270 270w"
+                                                 data-sizes="auto">
+                                                <div class="pre-loading position-absolute">
+                                                    <span class="pre-loading__bar"></span>
+                                                    <div class="vela-loading__icon"><span></span><span></span><span></span><span></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="collection-content col">
+                            <div class="collection-hero">
+                                <div class="collection-hero__inner">
+                                    <div class="collection-hero__image-container oveflow-hidden rounded-1 mb-4">
+
+                                        <img src="//cdn.shopify.com/s/files/1/0012/5334/3284/collections/collection1.jpg?v=1533126690&amp;width=1440" alt="Home page" srcset="//cdn.shopify.com/s/files/1/0012/5334/3284/collections/collection1.jpg?v=1533126690&amp;width=352 352w, //cdn.shopify.com/s/files/1/0012/5334/3284/collections/collection1.jpg?v=1533126690&amp;width=832 832w, //cdn.shopify.com/s/files/1/0012/5334/3284/collections/collection1.jpg?v=1533126690&amp;width=1200 1200w"
+                                             width="1440" height="240" loading="lazy" class="collection-hero__image img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="CollectionProductGrid">
+                                <div class="page-collection-header__left page-collection-header--no-fullwith flex-lg-nowrap mb-3 mb-md-4">
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap border-bottom border-2">
+                                        <div class="collection-filter me-2 d-block d-lg-none">
+                                            <button class="js-sidebar-toggle collection-filter__button d-flex align-items-center border-0" type="button">
+                                                <svg width="14px" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M480 1408v128h-352v-128h352zm352-128q26 0 45 19t19 45v256q0 26-19 45t-45 19h-256q-26 0-45-19t-19-45v-256q0-26 19-45t45-19h256zm160-384v128h-864v-128h864zm-640-512v128h-224v-128h224zm1312 1024v128h-736v-128h736zm-960-1152q26 0 45 19t19 45v256q0 26-19 45t-45 19h-256q-26 0-45-19t-19-45v-256q0-26 19-45t45-19h256zm640 512q26 0 45 19t19 45v256q0 26-19 45t-45 19h-256q-26 0-45-19t-19-45v-256q0-26 19-45t45-19h256zm320 128v128h-224v-128h224zm0-512v128h-864v-128h864z" /></svg>
+                                                <span class="ms-1">Filter</span>
+                                            </button>
+                                        </div>
+                                        <div id="ProductCount" class="collection-product-count d-none d-md-block" role="status">Showing 1-35 of 35 Results</div>
+                                        <facet-filters-form class="product-filter">
+                                            <form id="CollectionFiltersForm" class="product-filter__form">
+
+
+
+
+                                                <div class="collection-filters__field d-flex align-items-center">
+                                                    <label class="collection-filters__label me-2 d-none">Sort by:</label>
+                                                    <div class="collection-filters__dropdown d-flex align-items-center justify-content-between position-relative" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Date, new to old <svg width="10" height="10" aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 10 6">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor" />
+                                                        </svg>
+                                                    </div>
+                                                    <ul class="dropdown-menu border-0 facets__list" id="SortBy" aria-describedby="a11y-refresh-page-message">
+                                                        <li class="facets__item px-3 py-1 ">
+                                                            <label for="manual">
+                                                                <input class="d-none" type="radio" id="manual" name="sort_by" value="manual">
+                                                                <span>Featured</span>
+                                                            </label>
+                                                        </li>
+                                                        <li class="facets__item px-3 py-1 ">
+                                                            <label for="best-selling">
+                                                                <input class="d-none" type="radio" id="best-selling" name="sort_by" value="best-selling">
+                                                                <span>Best selling</span>
+                                                            </label>
+                                                        </li>
+                                                        <li class="facets__item px-3 py-1 ">
+                                                            <label for="title-ascending">
+                                                                <input class="d-none" type="radio" id="title-ascending" name="sort_by" value="title-ascending">
+                                                                <span>Alphabetically, A-Z</span>
+                                                            </label>
+                                                        </li>
+                                                        <li class="facets__item px-3 py-1 ">
+                                                            <label for="title-descending">
+                                                                <input class="d-none" type="radio" id="title-descending" name="sort_by" value="title-descending">
+                                                                <span>Alphabetically, Z-A</span>
+                                                            </label>
+                                                        </li>
+                                                        <li class="facets__item px-3 py-1 ">
+                                                            <label for="price-ascending">
+                                                                <input class="d-none" type="radio" id="price-ascending" name="sort_by" value="price-ascending">
+                                                                <span>Price, low to high</span>
+                                                            </label>
+                                                        </li>
+                                                        <li class="facets__item px-3 py-1 ">
+                                                            <label for="price-descending">
+                                                                <input class="d-none" type="radio" id="price-descending" name="sort_by" value="price-descending">
+                                                                <span>Price, high to low</span>
+                                                            </label>
+                                                        </li>
+                                                        <li class="facets__item px-3 py-1 ">
+                                                            <label for="created-ascending">
+                                                                <input class="d-none" type="radio" id="created-ascending" name="sort_by" value="created-ascending">
+                                                                <span>Date, old to new</span>
+                                                            </label>
+                                                        </li>
+                                                        <li class="facets__item px-3 py-1  selected">
+                                                            <label for="created-descending">
+                                                                <input class="d-none" type="radio" id="created-descending" name="sort_by" value="created-descending">
+                                                                <span>Date, new to old</span>
+                                                            </label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </form>
+                                        </facet-filters-form>
+                                    </div>
+
+                                    <div class="active-facets active-facets-desktop mt-1">
+
+
+
+
+
+                                        <a href="/collections/frontpage?sort_by=created-descending" class="active-facets__button active-facets__clear_all js-facet-remove p-0" title="Clear All">Clear All</a>
+                                    </div>
+                                </div>
+                                <div class="collection position-relative group-border">
+                                    <div class="pre-loading position-absolute">
+                                        <span class="pre-loading__bar"></span>
+                                        <div class="vela-loading__icon"><span></span><span></span><span></span><span></span></div>
+                                    </div>
+                                    <div id="main-collection-product-grid" data-id="template--15545693143092__product-grid" class="overflow-hidden">
+
+
+                                      
+                                        <div class="list-border row g-3 g-md-4 row-cols-2 row-cols-md-3 row-cols-lg-6">
+                                            
+                                               @foreach (var item in Model) {
+                                            <div class="col mb-3 mb-md-4">
+                                                <div class="product-card product-grid">
+                                                    
+                                                    <div class="product-grid__inner">
+
+                                                        
+                                                        
+                                                        <div class="product-card__image-wrapper">
+                                                            
+                                                                <a class="product-card__image-link" href="~/Products/ProductDetails?id=@item.ProductId">
+                                                                <span class="img-primary">
+                                                                    
+                                                                    <div class="card_wrap">
+                                                                        
+                                                                        <div class="card__image position-relative lazyload js" style="padding-top:100.0%;" role="img"
+                                                                             aria-label="Home Security Camera System"
+                                                                             data-alt="@item.ProductName"
+                                                                             data-bgset="@item.ProductImage"
+                                                                             data-sizes="auto">
+                                                                            <div class="pre-loading position-absolute">
+                                                                                <span class="pre-loading__bar"></span>
+                                                                                <div class="vela-loading__icon"><span></span><span></span><span></span><span></span></div>
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                    </div>
+                                                                </span>
+                                                                
+                                                                <span class="img-secondary position-absolute">
+
+                                                                    <div class="card_wrap">
+                                                                        <div class="card__image position-relative lazyload js" style="padding-top:100.0%;" role="img"
+                                                                             aria-label="Home Security Camera System"
+                                                                                 data-alt="@item.ProductName"
+                                                                                 data-bgset="@item.ProductImage"
+                                                                             data-sizes="auto">
+                                                                            <div class="pre-loading position-absolute">
+                                                                                <span class="pre-loading__bar"></span>
+                                                                                <div class="vela-loading__icon"><span></span><span></span><span></span><span></span></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </span>
+                                                            </a>
+                                                            
+                                                        <div class="product-card__content">
+                                                            <div class="product-card__content--inner  text-center mt-3">
+                                                                
+                                                                <h6 class="product-card__name mb-1">
+                                                                            <a class="effect-line line-title" href="/products/home-security-camera-system-5">@item.ProductName</a>
+                                                                </h6>
+                                                                <div class="product-card__review product-review mb-1">
+                                                                    <span class="shopify-product-reviews-badge" data-id="1227616321588"></span>
+                                                                </div>
+                                                                <div class="product-group-price d-flex align-items-center justify-content-center">
+                                                                    <div class="product-price">@item.ProductPrice</div>
+                                                                </div>
+                                                                
+                                                                <div class="product-card__buttons position-absolute bottom-0 start-0 w-100">
+                                                                    <div class="product-card__form">
+                                                                                <a asp-controller="Cart" asp-action="Add" asp-route-id="@item.ProductId" class="form-addtocart" data-product-form>
+                                                                                    <input type="hidden" name="id" value="9505168359476" /><button class="js-btn-addtocart btn btn--add-to-cart w-100" asp-controller="Cart" asp-action="Add" asp-route-id="@item.ProductId" type="submit" value="Submit" title="Add to Cart">
+                                                                                <svg class="icon-cart d-none" width="18" height="18" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.75 4.25H5.75V0.25C5.75 0.111875 5.63812 0 5.5 0H4.5C4.36188 0 4.25 0.111875 4.25 0.25V4.25H0.25C0.111875 4.25 0 4.36188 0 4.5V5.5C0 5.63812 0.111875 5.75 0.25 5.75H4.25V9.75C4.25 9.88813 4.36188 10 4.5 10H5.5C5.63812 10 5.75 9.88813 5.75 9.75V5.75H9.75C9.88813 5.75 10 5.63812 10 5.5V4.5C10 4.36188 9.88813 4.25 9.75 4.25Z" fill="currentColor" /></svg>
+                                                                                        <span class="text">Add to Cart</span>
+                                                                            </button>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                      
+
+
+
+                                                    </div>
+                                                   
+                                                </div>
+                                              
+                                            </div>
+                                            
+                                            </div>
+                                            }
+
+
+                                            
+                                        </div>
+
+
+
+
+                                        <div class="collection-pagination d-flex justify-content-between flex-wrap border-top border-2 pt-4">
+                                            <div id="ProductCount1" class="collection-product-count" role="status">Showing 1-35 of 35 Results</div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
